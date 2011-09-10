@@ -63,3 +63,9 @@ h3 { font-size: 18px; margin-top: 5px; }
 	margin: 0 auto;
 	padding: 20px 10px;
 	width: 900px; }
+
+#github_link {
+	position: relative;
+	bottom: -10px;
+	float: right;
+	right: 120px; }
