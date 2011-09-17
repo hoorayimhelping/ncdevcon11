@@ -48,7 +48,8 @@ table {
 }
 
 body, html {
-	background: #359DA3;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#62ace5), color-stop(100%,#7db9e8));
+	height: 100%;
 	font-family: Helvetica; }
 
 h1, h2, h3 {

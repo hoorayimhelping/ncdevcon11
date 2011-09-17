@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>JavaScript That Doesn't Suck</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/preso.js"></script>
+  </head>
+
+<body>
+  <div id="left_nav"><a id="prev" href="">Prev</a></div>
+  <div id="right_nav"><a id="next" href="">Next</a></div>
+  <div id="container">
+    <h1>Type Coercion with truthy and falsy values</h1>
+    <h3>What exactly do you mean?</h3>
+    <pre>
+      '' == '0' <span class="hidden_answer">// false</span>
+      0 == '' <span class="hidden_answer">// true</span>
+      0 == '0' <span class="hidden_answer">// true</span>
+
+      false == 'false' <span class="hidden_answer">// false</span>
+      false == '0' <span class="hidden_answer">// true</span>
+      false == 0 <span class="hidden_answer">// true</span>
+
+      false == undefined <span class="hidden_answer">// false</span>
+      false == null <span class="hidden_answer">// false</span>
+      null == undefined <span class="hidden_answer">// true</span>
+    </pre>
+	<h3>So what's happening here?</h3>
+	<p>JavaScript has an unsettling lack of transitivity.</p>
+  </div>
+  <span id="github_link">Code available on <a href="https://github.com/hoorayimhelping/ncdevcon11">github.</a></span>
+</body>
+</html>
