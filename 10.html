@@ -12,11 +12,32 @@
   <div id="left_nav"><a id="prev" href="">Prev</a></div>
   <div id="right_nav"><a id="next" href="">Next</a></div>
   <div id="container">
-    <h1>Wow, that sucks</h1>
-	<h3>There are some implications of this in everyday development</h3>
+    <h1>Scoping is weird in JavaScript</h1>
     <ul>
-      <li>Forms. You're checking a text input for an empty string, the user enters 0.</li>
-	  <li>Oops, false negative on validation.</li>
+      <li>
+		How many times have you seen weird behavior when doing something similar to this:
+		<pre>
+for (var i = 0; i < 5; i++) {
+  $('a#link_' + i).click(function() {
+    console.log(i);
+  });
+};
+		</pre>
+	  </li>
+	  <li>
+		Remember what happens?
+		<pre>
+5
+5
+5
+5
+5
+		</pre>
+
+	  </li>
+	  <li>
+		Why? Because the anonymous click handler function does not get called while i is in scope. The interpreter looks for the value of i in function's local scope but can't find it. It searches elsewhere and finds the last value, which is 5
+	  </li>
     </ul>
   </div>
   <span id="github_link">Code available on <a href="https://github.com/hoorayimhelping/ncdevcon11">github.</a></span>

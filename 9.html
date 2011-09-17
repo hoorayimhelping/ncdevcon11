@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>JavaScript That Doesn't Suck</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/preso.js"></script>
+  </head>
+
+<body>
+  <div id="left_nav"><a id="prev" href="">Prev</a></div>
+  <div id="right_nav"><a id="next" href="">Next</a></div>
+  <div id="container">
+    <h1>The <span class="inline_code">this</span> keyword is still confusing</h1>
+    <h5>Let's look at that last example</h5>
+    <pre>
+      var myObject = {};
+      myObject.whatsThis = function () {
+        function whatsThat() {
+          console.log(this);
+        };
+
+        whatsThat();
+      };
+
+      myObject.whatsThis(); // window
+    </pre>
+
+	<h5>This is easy to get around</h5>
+	<pre>
+      var myObject = {};
+      myObject.whatsThis = function () {
+        var that = this;
+        function whatsThat() {
+          console.log(this);
+          console.log(that);
+        };
+
+        whatsThat();
+      };
+
+      myObject.whatsThis(); // window
+                            // myObject
+    </pre>
+  </div>
+  <span id="github_link">Code available on <a href="https://github.com/hoorayimhelping/ncdevcon11">github.</a></span>
+</body>
+</html>
