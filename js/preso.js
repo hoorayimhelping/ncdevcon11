@@ -6,6 +6,14 @@ $(function() {
     $('#next').live('click', function () {
         return navigate('next');
     });
+
+	$('pre').each(function() {
+		if (!$(this).hasClass('prettyprint')) {
+			$(this).addClass('prettyprint');
+		}
+	});
+
+	prettyPrint();
 });
 
 var navigate = function(direction) {
@@ -34,7 +42,6 @@ var navigate = function(direction) {
         }
         currentPage++;
     }
-    console.log(currentPage);
     window.location.href = currentPage + '.html';
     return false;
 }

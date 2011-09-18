@@ -18,43 +18,43 @@
         Based on the usage, <span class="inline_code">this</span> refers to different things
         <h5>As a function</h5>
         <pre>
-          var whatsThis = function() {
-            console.log(this, this === window);
-          };
+  var whatsThis = function() {
+    console.log(this, this === window);
+  };
 
-          whatsThis(); // window, true
+  whatsThis(); // window, true
         </pre>
         <h5>As a method</h5>
         <pre>
-          var myObject = {
-            whatsThis: function() {
-              console.log(this, this === myObject);
-            }
-          };
+  var myObject = {
+    whatsThis: function() {
+      console.log(this, this === myObject);
+    }
+  };
 
-           myObject.whatsThis(); // myObject, true
+  myObject.whatsThis(); // myObject, true
         </pre>
         <h5>As a Constructor</h5>
         <pre>
-          var MyConstructor = function() {
-            console.log(this);
-          };
+  var MyConstructor = function() {
+    console.log(this);
+  };
 
-          var myObject = new MyConstructor(); // MyConstructor
+  var myObject = new MyConstructor(); // MyConstructor
         </pre>
 
         <h5>As a function on a function</h5>
         <pre>
-          var myObject = {};
-          myObject.whatsThis = function () {
-            function whatsThat() {
-              console.log(this);
-            };
+  var myObject = {};
+  myObject.whatsThis = function () {
+    function whatsThat() {
+      console.log(this);
+    };
 
-            whatsThat();
-          };
+    whatsThat();
+  };
 
-          myObject.whatsThis(); // window
+  myObject.whatsThis(); // window
         </pre>
       </li>
     </ul>
