@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>JavaScript That Doesn't Suck</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/preso.js"></script>
+  </head>
+
+<body>
+  <div id="left_nav"><a id="prev" href="">Prev</a></div>
+  <div id="right_nav"><a id="next" href="">Next</a></div>
+  <div id="container">
+    <h1>Learn to use the length property</h1>
+    <ul>
+      <li>When you run a selector on the DOM, jQuery actually returns an array</li>
+	  <li>
+		To test if an element exists, use the <span class="inline_code">length</span> property
+		<pre>
+if ($('#myId').length) {
+  // stuff here
+}
+		</pre>
+	  </li>
+    </ul>
+  </div>
+  <span id="github_link">Code available on <a href="https://github.com/hoorayimhelping/ncdevcon11">github.</a></span>
+</body>
+</html>

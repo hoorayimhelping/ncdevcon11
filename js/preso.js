@@ -21,7 +21,7 @@ var navigate = function(direction) {
         chunks = url.split('/'),
         page = chunks[chunks.length - 1],
         currentPage = 0,
-		lastPage = 20;
+		lastPage = 21;
 
     if (direction === 'prev') {
         if (page !== 'index.html') {
