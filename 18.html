@@ -12,11 +12,25 @@
   <div id="left_nav"><a id="prev" href="">Prev</a></div>
   <div id="right_nav"><a id="next" href="">Next</a></div>
   <div id="container">
-    <h1>Writing <span class="lowercase">jQuery</span> that doesn't suck</h1>
+    <h1>More on Caching</h1>
     <ul>
-      <li>Write selectors more effectively</li>
-      <li>Cache oft-used selectors</li>
-      <li>Minimize DOM manipulation</li>
+      <li>
+      	Be aware, if you have a cached selector, and code somewhere else modifies its DOM element, your cached element will be dirty
+      </li>
+	  <li>
+	  	<pre>
+$myId = $('#myId');
+$myId.attr('title', 'Dirty title');
+
+// other code that got run:
+
+$('a.link').live('click', function() {
+  $('#myId').attr('title', 'New title');
+});
+
+console.log($myId.attr('title')); // Dirty title
+	  	</pre>
+	  </li>
     </ul>
   </div>
   <span id="github_link">Code available on <a href="https://github.com/hoorayimhelping/ncdevcon11">github.</a></span>

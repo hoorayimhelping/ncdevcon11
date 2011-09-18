@@ -12,11 +12,20 @@
   <div id="left_nav"><a id="prev" href="">Prev</a></div>
   <div id="right_nav"><a id="next" href="">Next</a></div>
   <div id="container">
-    <h1>Writing <span class="lowercase">jQuery</span> that doesn't suck</h1>
+    <h1>For the love of everything holy, never do this:</h1>
     <ul>
-      <li>Write selectors more effectively</li>
-      <li>Cache oft-used selectors</li>
-      <li>Minimize DOM manipulation</li>
+      <li>
+      	<pre>
+for (var i = 0; i < 20; i++) {
+  var $myList = $('ul.myList');
+
+  // other code here
+}
+      	</pre>
+      </li>
+      <li>
+      	Don't ever access any unchanging anything during any iteration of any loop. Store it in a variable before the loop
+      </li>
     </ul>
   </div>
   <span id="github_link">Code available on <a href="https://github.com/hoorayimhelping/ncdevcon11">github.</a></span>

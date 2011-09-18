@@ -12,11 +12,31 @@
   <div id="left_nav"><a id="prev" href="">Prev</a></div>
   <div id="right_nav"><a id="next" href="">Next</a></div>
   <div id="container">
-    <h1>Writing <span class="lowercase">jQuery</span> that doesn't suck</h1>
+    <h1>Caching Selectors</h1>
     <ul>
-      <li>Write selectors more effectively</li>
-      <li>Cache oft-used selectors</li>
-      <li>Minimize DOM manipulation</li>
+      <li>jQuery doesn't cache selectors for you</li>
+	  <li>
+	  	So doing this:
+		<pre>
+var height = $('#myId').height();
+var width = $('#otherId').width();
+var bgColor = $('#myId').css('background-color');
+		</pre>
+		is bad and inefficient mmmkay
+	  </li>
+	  <li>
+	  	Instead, cache the selector
+		<pre>
+var $myId = $('#myId');
+
+var height = $myId.height();
+var width = $('#otherId').width();
+var bgColor = $myId.css('background-color');
+		</pre>
+	  </li>
+	  <li>
+	  	This will save you an expensive DOM lookup
+	  </li>
     </ul>
   </div>
   <span id="github_link">Code available on <a href="https://github.com/hoorayimhelping/ncdevcon11">github.</a></span>

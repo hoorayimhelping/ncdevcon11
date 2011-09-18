@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>JavaScript That Doesn't Suck</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/preso.js"></script>
+  </head>
+
+<body>
+  <div id="left_nav"><a id="prev" href="">Prev</a></div>
+  <div id="right_nav"><a id="next" href="">Next</a></div>
+  <div id="container">
+    <h1>More <span class="lowercase">jQuery</span> selector writing</h1>
+	<h3>Using <span class="inline_code">jQuery.find()</span> is fast</h3>
+    <ul>
+      <li>
+		<pre>
+$('#mySelector').find('div.myClass');
+		</pre>
+      </li>
+	  <li>
+	  	<span class="inline_code">jQuery.find()</span> is used internally when searching on a context. So using a context will never be faster, and will most likely be slower than using <span class="inline_code">jQuery.find()</span>
+		<pre>
+$('div.myClass', '#mySelector'); // using context - wrong
+
+$('#mySelector').find('div.myClass'); // using find - correct
+		</pre>
+	  </li>
+	  <li>
+	  	If you need to search deep in the DOM it is probably smartest to use <span class="inline_code">jQuery.find()</span>
+	  </li>
+    </ul>
+  </div>
+  <span id="github_link">Code available on <a href="https://github.com/hoorayimhelping/ncdevcon11">github.</a></span>
+</body>
+</html>

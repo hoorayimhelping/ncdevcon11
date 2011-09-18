@@ -12,11 +12,6 @@ $(function() {
 			$(this).addClass('prettyprint');
 		}
 	});
-	$('span.inline_code').each(function() {
-		if (!$(this).hasClass('prettyprint')) {
-			$(this).addClass('prettyprint');
-		}
-	});
 
 	prettyPrint();
 });

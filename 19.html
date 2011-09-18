@@ -12,17 +12,34 @@
   <div id="left_nav"><a id="prev" href="">Prev</a></div>
   <div id="right_nav"><a id="next" href="">Next</a></div>
   <div id="container">
-    <h1>Keep writing selectors more effectively</h1>
+    <h1>Minimize DOM manipulation</h1>
     <ul>
       <li>
-          <span class="inline_code">$('#myId')</span> is fast - it's a single DOM lookup
+      	Manipulating the DOM is mad expensive yo, try to keep it to a minimum. If you're going to do it, do it rightly instead of wrongly.
       </li>
-      <li>
-          Don't use <span class="inline_code">$('h2#myId')</span> it won't ever be faster, and it will most likely be slower
-      </li>
-      <li>
-		  Don't ever just search for a single class <span class="inline_code">$('.myClass')</span>. It's inefficient and slow.
-      </li>
+	  <li>
+	  	Wrongly:
+		<pre>
+var $myList = $('ul.myList');
+
+for (var i = 1; i < 10; i++) {
+	$myList.append('&lt;li&gt;I heard you like lists!! index: ' + i + '&lt;/li&gt;');
+}
+		</pre>
+	  </li>
+	  <li>
+		Rightly:
+	  	<pre>
+var $myList = $('ul.myList');
+var listHtml = '';
+
+for (var i = 1; i < 10; i++) {
+	listHtml += '&lt;li&gt;I heard you like lists!! index: ' + i + '&lt;/li&gt;';
+}
+
+$myList.append(listHtml);
+	  	</pre>
+	  </li>
     </ul>
   </div>
   <span id="github_link">Code available on <a href="https://github.com/hoorayimhelping/ncdevcon11">github.</a></span>
