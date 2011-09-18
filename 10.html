@@ -15,29 +15,29 @@
     <h1>Scoping is weird in JavaScript</h1>
     <ul>
       <li>
-		How many times have you seen weird behavior when doing something similar to this:
-		<pre>
+        How many times have you seen weird behavior when doing something similar to this:
+        <pre>
 for (var i = 0; i < 5; i++) {
   $('a#link_' + i).click(function() {
     console.log(i);
   });
 };
-		</pre>
-	  </li>
-	  <li>
-		Remember what happens?
-		<pre>
+        </pre>
+      </li>
+      <li>
+        Remember what happens?
+        <pre>
 5
 5
 5
 5
 5
-		</pre>
+        </pre>
 
-	  </li>
-	  <li>
-		Why? Because the anonymous click handler function does not get called while i is in scope. The interpreter looks for the value of i in function's local scope but can't find it. It searches elsewhere and finds the last value, which is 5
-	  </li>
+      </li>
+      <li>
+        Why? Because the anonymous click handler function does not get called while i is in scope. The interpreter looks for the value of i in function's local scope but can't find it. It searches elsewhere and finds the last value, which is 5
+      </li>
     </ul>
   </div>
   <span id="github_link">Code available on <a href="https://github.com/hoorayimhelping/ncdevcon11">github.</a></span>

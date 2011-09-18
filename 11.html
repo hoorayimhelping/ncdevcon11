@@ -15,7 +15,7 @@
     <h1>So how do you fix it?</h1>
     <ul>
       <li>
-		<pre>
+        <pre>
 for (var i = 0; i < 5; i++) {
   (function(j) {
     $('a#link_' + j).click(function() {
@@ -23,12 +23,12 @@ for (var i = 0; i < 5; i++) {
     });
   })(i);
 };
-		</pre>
+        </pre>
       </li>
       <li>
-		<h5>Why does this work?</h5>
-		By creating a self-calling anonymous function, you are creation a closure - access to a scope that doesn't exist anymore. That closure passes in the value of i, which is retained by the anonymous click handler
-	  </li>
+        <h5>Why does this work?</h5>
+        By creating a self-calling anonymous function, you are creation a closure - access to a scope that doesn't exist anymore. That closure passes in the value of i, which is retained by the anonymous click handler
+      </li>
     </ul>
     <pre></pre>
   </div>

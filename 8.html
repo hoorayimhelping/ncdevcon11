@@ -12,20 +12,20 @@
   <div id="left_nav"><a id="prev" href="">Prev</a></div>
   <div id="right_nav"><a id="next" href="">Next</a></div>
   <div id="container">
-    <h1>The <span class="inline_code">this</span> keyword is confusing</h1>
+    <h1>The <span class="lowercase">this</span> keyword is confusing</h1>
     <ul>
       <li>
-		Based on the usage, <span class="inline_code">this</span> refers to different things
-		<h5>As a function</h5>
-		<pre>
-		  var whatsThis = function() {
-			console.log(this, this === window);
-		  };
+        Based on the usage, <span class="inline_code">this</span> refers to different things
+        <h5>As a function</h5>
+        <pre>
+          var whatsThis = function() {
+            console.log(this, this === window);
+          };
 
           whatsThis(); // window, true
-		</pre>
-		<h5>As a method</h5>
-		<pre>
+        </pre>
+        <h5>As a method</h5>
+        <pre>
           var myObject = {
             whatsThis: function() {
               console.log(this, this === myObject);
@@ -33,18 +33,18 @@
           };
 
            myObject.whatsThis(); // myObject, true
-		</pre>
-		<h5>As a Constructor</h5>
-		<pre>
+        </pre>
+        <h5>As a Constructor</h5>
+        <pre>
           var MyConstructor = function() {
             console.log(this);
           };
 
           var myObject = new MyConstructor(); // MyConstructor
-		</pre>
+        </pre>
 
-		<h5>As a function on a function</h5>
-		<pre>
+        <h5>As a function on a function</h5>
+        <pre>
           var myObject = {};
           myObject.whatsThis = function () {
             function whatsThat() {
@@ -55,8 +55,8 @@
           };
 
           myObject.whatsThis(); // window
-		</pre>
-	  </li>
+        </pre>
+      </li>
     </ul>
   </div>
   <span id="github_link">Code available on <a href="https://github.com/hoorayimhelping/ncdevcon11">github.</a></span>
